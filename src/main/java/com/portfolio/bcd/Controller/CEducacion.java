@@ -1,7 +1,6 @@
 package com.portfolio.bcd.Controller;
 
 import com.portfolio.bcd.Dto.dtoEducacion;
-import com.portfolio.bcd.Dto.dtoExperiencia;
 import com.portfolio.bcd.Entity.Educacion;
 import com.portfolio.bcd.Entity.Experiencia;
 import com.portfolio.bcd.Security.Controller.Mensaje;
@@ -46,7 +45,7 @@ public class CEducacion {
     }
     
     @GetMapping("/detail/{id}")
-    public ResponseEntity<Experiencia> getById(@PathVariable("id") int id){
+    public ResponseEntity<Educacion> getById(@PathVariable("id") int id){
         if(!sEducacion.existsById(id))
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
         Educacion educacion = sEducacion.getOne(id).get();
